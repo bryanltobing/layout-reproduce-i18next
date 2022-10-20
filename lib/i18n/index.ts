@@ -1,0 +1,1 @@
+export { getServerSideTranslations } from './getServerSideTranslations';

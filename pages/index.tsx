@@ -2,8 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import {getServerSideTranslations} from "../lib/i18n";
 
 const Home: NextPage = () => {
   return (
@@ -76,7 +75,7 @@ export default Home;
 export async function getStaticProps({ locale }: any) {
   return {
     props: {
-      ...(await serverSideTranslations(locale)),
+      ...(await getServerSideTranslations(locale)),
       // Will be passed to the page component as props
     },
   };
