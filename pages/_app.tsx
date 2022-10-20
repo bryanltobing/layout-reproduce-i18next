@@ -1,7 +1,8 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import { appWithTranslation, useTranslation } from "next-i18next";
-import React from "react";
+import { appWithTranslation } from "next-i18next";
+import { Layout } from "../components/layout";
+import nextI18nConfig from '../next-i18next.config';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -11,15 +12,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const { t } = useTranslation();
-
-  return (
-    <div>
-      <div>{t("hello-world")}</div>
-      {children}
-    </div>
-  );
-};
-
-export default appWithTranslation(MyApp);
+export default appWithTranslation(MyApp, nextI18nConfig);
