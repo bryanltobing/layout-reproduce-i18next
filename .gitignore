@@ -1,9 +1,14 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
-/.pnp
-.pnp.js
+**/node_modules
+.yarn/*
+!.yarn/patches
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
 
 # testing
 /coverage
@@ -33,3 +38,12 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+# IDE
+.idea/*
+!.idea/modules.xml
+!.idea/perso.iml
+.project
+.classpath
+*.launch
+*.sublime-workspace
